@@ -121,7 +121,13 @@ const NavBar = () => {
                 </Button>
                 <List>
                     {menuItems.map((text, index) => (
-                        <ListItem key={index} >
+                        <ListItem key={index} sx={{
+                            display: { xs: "none", md: "block"},
+                            color: "#000",
+                            padding: "10px 20px",
+                            transition: "color 0.3s ease",
+                            "&:hover": {color: "#ffb416"},
+                        }} >
                             <ListItemText primary={text} />
                         </ListItem>
                         )
@@ -131,13 +137,12 @@ const NavBar = () => {
                 <Divider sx={{ my: 2 }} />
 
                 <ListItem>
-                    <img src="/brazil-flag.png" alt="BR" style={{ width: 25, marginRight: 10 }} />
+                    <img src="#" alt="BR" style={{ width: 25, marginRight: 10 }} />
                     <ListItemText primary="BR" />
                 </ListItem>
 
-
                 <ListItem>
-                    <img src="/chat-icon.png" alt="Suporte" style={{ width: 25, marginRight: 10 }} />
+                    <img src="#" alt="Suporte" style={{ width: 25, marginRight: 10 }} />
                     <ListItemText primary="Dúvidas Frequentes" />
                 </ListItem>
             </Box>
