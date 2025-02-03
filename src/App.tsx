@@ -1,3 +1,4 @@
+import Carrossel from "./Pages/Sections/Carrossel";
 import HeroSection from "./Pages/Sections/HeroSection";
 import NavBar from "./Pages/Sections/NavBar";
 
@@ -6,6 +7,7 @@ const App = () => {
     <>
     <NavBar/>
     <HeroSection/>
+    <Carrossel/>
     </>
   );
 }

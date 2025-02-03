@@ -1,6 +1,9 @@
+import { useMediaQuery } from "@mui/material";
 import bghero from "../../assets/Imagens/bg-hero.webp";
+import bgmobile from "../../assets/Imagens/bgmobile-1.webp"
 
 const HeroSection = () => {
+    const isMobile = useMediaQuery("(max-width: 768px)");
     const handleClick = () => {
         window.location.href = "#";
     };
@@ -9,7 +12,7 @@ const HeroSection = () => {
         <section
         onClick={handleClick}
         style={{
-            backgroundImage: `url(${bghero})`,
+            backgroundImage: `url(${isMobile ? bgmobile : bghero})`, 
             backgroundSize: "100%",
             paddingTop: "50px",
             backgroundRepeat: "no-repeat",
