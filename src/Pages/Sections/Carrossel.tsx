@@ -21,7 +21,7 @@ const Carousel = () => {
   };
 
   return (
-    <Box sx={{ textAlign: "center", width: "100%", maxWidth: "900px", margin: "0 auto", padding: "10px", marginTop: "-100px" }}>
+    <Box sx={{ textAlign: "center", width: "100%", maxWidth: "900px", margin: "0 auto", padding: "10px", marginTop: "-50px" }}>
       <Box
         sx={{
           position: "relative",
