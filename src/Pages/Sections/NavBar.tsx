@@ -3,6 +3,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import logo from "../../assets/Imagens/Logo.png";
+import brFlag from "../../assets/Imagens/brasil.webp";
+import suporteIcon from "../../assets/Imagens/dialogo.png";
 
 const NavBar = () => {
     const [openDrawer, setOpenDrawer] = useState(false);
@@ -85,64 +87,77 @@ const NavBar = () => {
                 "& .MuiSvgIcon-root": { fontSize: "2.5rem" }, 
             }}
             >
-
-            {/* Menu Drawer >>>*/}
-
                 <MenuIcon />
             </IconButton>
         </StyledToolbar>
         </AppBar>
-        <Drawer anchor="right" open={openDrawer} onClose={toggleDrawer} sx={{'& .MuiDrawer-paper': {borderRadius:"20px 0 0 20px"}}}>
-            <Box sx={{ width: 350, padding: "20px", marginLeft:"10px", }}>
+        
+        {/* Menu Drawer >>>*/}
+
+        <Drawer
+            anchor="right"
+            open={openDrawer}
+            onClose={toggleDrawer}
+            sx={{
+                '& .MuiDrawer-paper': {
+                    borderRadius: "20px 0 0 20px",
+                    width: { xs: 250, sm: 300, md: 350 },
+                }
+            }}
+        >
+            <Box sx={{ padding: "20px", marginLeft: "10px" }}>
                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
-                        <img src={logo} alt="Logo" style={{ width: "115px" }} />
+                    <img src={logo} alt="Logo" style={{ width: "115px" }} />
                     <IconButton onClick={toggleDrawer}>
                         <CloseIcon />
                     </IconButton>
                 </Box>
+
                 <Button
                     variant="outlined"
-                    sx={{ 
-                        display: { xs: "none", md: "block" }, 
-                        backgroundColor: "#fff", 
-                        "&:hover": { backgroundColor: "#1c1c1c", color:"#fff" },
+                    sx={{
+                        display: { xs: "block", md: "block" },
+                        backgroundColor: "#fff",
+                        "&:hover": { backgroundColor: "#1c1c1c", color: "#fff" },
                         padding: "5px",
-                        width:"65%",
+                        width: "100%",
                         fontWeight: "bold",
                         border: "2px solid black",
                         fontSize: "13px",
                         color: "#000",
                         borderRadius: "25px",
                         textTransform: "none",
-                        minWidth: "175px",
-                        }}
+                    }}
                 >
-                Buscar academia
+                    Buscar academia
                 </Button>
+
                 <List>
                     {menuItems.map((text, index) => (
-                        <ListItem key={index} sx={{
-                            display: { xs: "none", md: "block"},
-                            color: "#000",
-                            padding: "10px 20px",
-                            transition: "color 0.3s ease",
-                            "&:hover": {color: "#ffb416"},
-                        }} >
+                        <ListItem
+                            key={index}
+                            sx={{
+                                display: { xs: "block", md: "block" },
+                                color: "#000",
+                                padding: "10px 20px",
+                                transition: "color 0.3s ease",
+                                "&:hover": { color: "#ffb416" },
+                            }}
+                        >
                             <ListItemText primary={text} />
                         </ListItem>
-                        )
-                    )}
+                    ))}
                 </List>
 
                 <Divider sx={{ my: 2 }} />
 
                 <ListItem>
-                    <img src="#" alt="BR" style={{ width: 25, marginRight: 10 }} />
+                    <img src={brFlag} alt="BR" style={{ width: 25, marginRight: 10 }} />
                     <ListItemText primary="BR" />
                 </ListItem>
 
                 <ListItem>
-                    <img src="#" alt="Suporte" style={{ width: 25, marginRight: 10 }} />
+                    <img src={suporteIcon} alt="Suporte" style={{ width: 25, marginRight: 10 }} />
                     <ListItemText primary="Dúvidas Frequentes" />
                 </ListItem>
             </Box>
