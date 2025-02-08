@@ -65,7 +65,7 @@ export default function Pricing() {
                     <Card
                         key={index}
                         sx={{
-                            width: 225,
+                            width: 280,
                             p: 4,
                             backgroundColor: plan.highlight ? "#1c1c1c" : "#fff",
                             color: plan.highlight ? "#fff" : "#000",
