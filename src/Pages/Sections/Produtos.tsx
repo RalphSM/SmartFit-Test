@@ -13,7 +13,7 @@ const products = [
 
 const ProductsSection = () => {
     return (
-        <Box sx={{ textAlign: "center", width: "100%", maxWidth: "1200px", margin: "0 auto", padding: 2 }}>
+        <Box sx={{ textAlign: "center", width: "90%", maxWidth: "1200px", margin: "0 auto", padding: 2 }}>
             <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1 }}>
                 Conheça nossos produtos e serviços adicionais para você
             </Typography>
@@ -23,7 +23,7 @@ const ProductsSection = () => {
 
             <Grid container spacing={3}>
                 {products.map((product) => (
-                    <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} marginBottom={2}>
                         <Box
                             sx={{
                                 backgroundColor: "#fff",
